@@ -1,0 +1,213 @@
+a {
+    color: #FFFFFF !important;
+}
+
+a:hover {
+    color: #B4C8C9 !important;
+}
+
+.portfolio-container {
+    background-color: #303030;
+    /**/
+}
+
+nav {
+    
+}
+
+.portfolio-main {
+    background-color: #000000;
+    padding-top: 10px;
+    margin: 0px auto 0px auto;
+    opacity: 1;
+    width: 1200px;
+}
+
+.portfolio-main-logotype {
+    height: 250px;
+}
+
+.portfolio-big-circle {
+    opacity: 1;
+    margin: 20px 0px 0px 50px;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    background-color: #B4C8C9;
+    text-align: center;
+    color: #000000;
+    padding-top: 40px;
+    float: left;
+}
+
+.portfolio-short-about {
+    float: right;
+    color: #FFFFFF;
+    width: 500px;
+    margin: 50px 50px 0px 0px;
+}
+
+.portfolio-hr {
+    width:75%;
+    height:1px;
+    margin: 0px auto 20px auto;
+}
+
+.portfolio-main-recents {
+    height: 230px;
+    width: 100%;
+    padding: 10px 0px 0px 50px;
+}
+
+.portfolio-recent-short-text {
+    float: left;
+    color: #FFFFFF;
+    font-size: 15px;
+    width: 250px;
+    margin-right: 50px;
+}
+
+.portfolio-recent-images {
+    float: left;
+
+}
+
+.portfolio-recent-links {
+    float: right;
+    margin: 100px 0px 0px 0px;
+    color: white;
+}
+
+.portfolio-pseudo-image {
+    float: left;
+    margin: 0px 0px 0px 50px;
+    background-color: red;
+    width: 200px;
+    height: 200px;
+}
+
+.portfolio-sticky-animated-nav {
+    width: 100%;
+    height: 80px;
+    background-color: #63C8CC;
+    opacity: 0.9;
+    transition: all 0.4s ease;
+}
+
+.portfolio-sticky-animated-nav.sticky {
+    position: fixed;
+    width:100%;
+    height: 40px;
+    background-color: #63C8CC;
+}
+
+.portfolio-sticky-animated-inner {
+    width: 1200px;
+    margin: 0px auto 0px auto;
+}
+
+nav {
+    float:left;
+    font-size: 20px;
+}
+
+footer {
+    background-color: #000000;
+    height: 600px;
+    color: ;
+    opacity: 0.7;
+    text-align: center;
+    padding: 20px 0px 10px 0px;
+}
+
+.portfolio-sticky-animated-button {
+    float: left;
+    height: 55px;
+    width: 120px;
+    margin: 10px 10px 0px 10px;
+    padding-top: 15px;
+    background-color: #63C8CC;
+    color: #000000;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.portfolio-sticky-animated-button:hover {
+    float: left;
+    height: 55px;
+    width: 120px;
+    background-color: #63C8CC;
+    color: #545454;
+    text-shadow: 2px 5px 10px #FFFFFF;
+    text-align: center;
+    box-shadow: 1px 5px 20px #A8A8A8;
+}
+
+.portfolio-sticky-animated-button.sticky {
+    margin: 0px 10px 0px 0px;
+    float: left;
+    height: 40px;
+    width: 100px;
+    padding-top: 5px;
+    background-color: #63C8CC;
+    color: #ffffff;
+    text-align: center;
+}
+
+.portfolio-sticky-animated-button:hover.sticky {
+    color: #000000;
+}
+
+.portfolio-sticky-animated-socials {
+    float:right;
+}
+/*icons*/
+.portfolio-social-roll-facebook {
+    background-image: url('/images/facebook48-grey.png');
+    height: 48px;
+    width: 48px;
+    margin: 10px;
+    float:left;
+    position:relative;
+    border-radius: 50%;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+}
+
+.portfolio-social-roll-facebook:hover {
+    background-image: url('/images/facebook48-color.png');
+    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.8);
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    transform:rotate(360deg);
+}
+
+.portfolio-social-roll-in {
+    background-image: url('/images/linked48-grey.png');
+    height: 48px;
+    width: 48px;
+    margin: 10px;
+    float: left;
+    position:relative;
+    border-radius: 50%;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+}
+
+.portfolio-social-roll-in:hover {
+    background-image: url('/images/linked48-color.png');
+    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.8);
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    transform:rotate(360deg);
+}

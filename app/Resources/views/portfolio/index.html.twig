@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+    <div class="portfolio-container">
+        <div class="portfolio-sticky-animated-nav">
+            <div class="portfolio-sticky-animated-inner">
+                <nav>
+                    <a href="#"><div class="portfolio-sticky-animated-button">LINK</div></a>
+                    <a href="#"><div class="portfolio-sticky-animated-button">LINK</div></a>
+                    <a href="#"><div class="portfolio-sticky-animated-button">LINK</div></a>
+                </nav>
+                <div class="portfolio-sticky-animated-socials">
+                    <a href="#"><div class="portfolio-social-roll-facebook"></div></a>
+                    <a href="#"><div class="portfolio-social-roll-in"></div></a>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-top">
+        </div>
+        <div class="portfolio-main">
+            <div class="portfolio-main-logotype" id="main-short-about">
+                <div class="portfolio-big-circle" id="main-cirle">
+                    Dominik<br/>Pakosz<br/><h1>.portfolio</h1>
+                </div>
+                <div class="portfolio-short-about">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus dictum est, eu feugiat ex vestibulum eu. Nunc libero felis, sagittis ac placerat et, sagittis eu eros. Vestibulum lobortis nisl sit amet lorem condimentum tincidunt. Nulla non vehicula nunc, nec vehicula nisl. Nullam rhoncus porta neque sit amet laoreet. Cras dui nulla, suscipit eu congue et, efficitur sed ante. Suspendisse ut velit vitae magna vulputate auctor sed eget quam.
+                </div>
+            </div>
+                <div class="portfolio-hr" id="hr"><hr></div>
+                <div class="portfolio-main-recents" id="main-recent-projects">
+                    <div class="portfolio-recent-short-text">
+                        <h3>Ostatnie projekty</h3>
+                        Najświeższe projekty nad którymi pracowałem. Zerknij.
+                        <div class="portfolio-recent-links"><a href="#">Zobacz wszystkie prace &raquo;</a></div>
+                    </div>
+                    <div class="portfolio-recent-images">
+                        <div class="portfolio-pseudo-image"></div>
+                        <div class="portfolio-pseudo-image"></div>
+                        <div class="portfolio-pseudo-image"></div>
+                    </div>
+                </div>
+                <div class="portfolio-hr" id="hr"><hr></div>
+                <div class="portfolio-main-recents" id="main-recent-posts">
+                    <div class="portfolio-recent-short-text">
+                        <h3>Ostatnie posty</h3>
+                        Najświeższe posty na moim blogu. Sprawdź.
+                        <div class="portfolio-recent-links"><a href="#">Zobacz wszystkie posty &raquo;</a></div>
+                    </div>
+                    <div class="portfolio-recent-images">
+                        <div class="portfolio-pseudo-image"></div>
+                        <div class="portfolio-pseudo-image"></div>
+                        <div class="portfolio-pseudo-image"></div>
+                    </div>
+                </div>
+        </div>
+    </div>
+<footer>Dominik Pakosz &copy; 2016 | <a href="mailto:czlowiek@czlowiek.pl">Masz pytanie lub sugestię?</a></footer>
+{% endblock %}
+{% block javascripts %}
+    {{parent()}}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(window).scroll(function() {
+            if ($(this).scrollTop() > 1){  
+                $('.portfolio-sticky-animated-nav').addClass("sticky");
+                $('.portfolio-sticky-animated-button').addClass("sticky");
+                $('.portfolio-social-roll-facebook').animate({left: "150px", top: "40px"}, 1);
+                $('.portfolio-social-roll-in').animate({left: "150px", top: "40px"}, 1);
+              }
+              else{
+                $('.portfolio-sticky-animated-nav').removeClass("sticky");
+                $('.portfolio-sticky-animated-button').removeClass("sticky");
+                $('.portfolio-social-roll-facebook').animate({left: "-=150px", top: "-=40px"}, 1);
+                $('.portfolio-social-roll-in').animate({left: "-=150px", top: "-=40px"}, 1);
+              }
+            });
+        });
+    </script>
+{% endblock %}
