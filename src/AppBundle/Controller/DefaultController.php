@@ -12,6 +12,22 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('portfolio/index.html.twig');
+        return $this->render('portfolio/home.html.twig');
+    }
+    
+    /**
+     * @Route("/o-mnie", name="about")
+     */
+    public function aboutAction()
+    {
+        return $this->render('portfolio/about.html.twig');
+    }
+    
+    /**
+     * @Route("/portfolio", name="portfolio")
+     */
+    public function portfolioAction()
+    {
+        return $this->render('portfolio/portfolio.html.twig');
     }
 }

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+    <div class="portfolio-container">
+        <div class="portfolio-sticky-animated-nav">
+            <div class="portfolio-sticky-animated-inner">
+                <nav>
+                    <a href="{{path('homepage')}}"><div class="portfolio-sticky-animated-button">Home</div></a>
+                    <a href="{{path('about')}}"><div class="portfolio-sticky-animated-button">O mnie</div></a>
+                    <a href="{{path('portfolio')}}"><div class="portfolio-sticky-animated-button">Portfolio</div></a>
+                    <a href="{{path('homepage')}}"><div class="portfolio-sticky-animated-button">Blog</div></a>
+                    <a href="{{path('homepage')}}"><div class="portfolio-sticky-animated-button">Kontakt</div></a>
+                    <a href="{{path('homepage')}}"><div class="portfolio-sticky-animated-button">Usługi</div></a>
+                </nav>
+                <div class="portfolio-sticky-animated-socials">
+                    <a href="#"><div class="portfolio-social-roll-facebook"></div></a>
+                    <a href="#"><div class="portfolio-social-roll-in"></div></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="portfolio-main">
+            <div class="portfolio-about-photo"></div>
+            <div class="portfolio-about-description"></div>
+        </div>
+        <footer>Dominik Pakosz &copy; 2016 | <a href="mailto:czlowiek@czlowiek.pl">Masz pytanie lub sugestię?</a></footer>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{parent()}}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(window).scroll(function() {
+            if ($(this).scrollTop() > 1){  
+                $('.portfolio-sticky-animated-nav').addClass("sticky");
+                $('.portfolio-sticky-animated-button').addClass("sticky");
+                $('.portfolio-social-roll-facebook').animate({left: "140px", top: "40px"}, 1);
+                $('.portfolio-social-roll-in').animate({left: "140px", top: "40px"}, 1);
+              }
+              else{
+                $('.portfolio-sticky-animated-nav').removeClass("sticky");
+                $('.portfolio-sticky-animated-button').removeClass("sticky");
+                $('.portfolio-social-roll-facebook').animate({left: "-=140px", top: "-=40px"}, 1);
+                $('.portfolio-social-roll-in').animate({left: "-=140px", top: "-=40px"}, 1);
+              }
+            });
+        });
+    </script>
+{% endblock %}
