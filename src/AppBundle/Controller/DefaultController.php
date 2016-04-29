@@ -63,4 +63,12 @@ class DefaultController extends Controller
             //lub wywal 404 -> jeszcze do przemyślenia
         }
     }
+    
+    /**
+     * @Route("/kontakt", name="contact")
+     */
+    public function contactAction()
+    {
+        return $this->render('/portfolio/contact.html.twig');
+    }
 }

@@ -18,15 +18,12 @@ a:hover {
     width: 100%;
 }
 
-nav {
-    
-}
-
 .portfolio-main {
     background-color: #000000;
     padding-top: 10px;
     margin: 0px auto 0px auto;
     width: 1000px;
+    min-height: 900px;
 }
 
 .portfolio-main-logotype {
@@ -101,6 +98,7 @@ nav {
 }
 
 .portfolio-sticky-animated-nav.sticky {
+    z-index: 999;
     position: fixed;
     width:100%;
     height: 40px;
@@ -285,3 +283,95 @@ footer {
     margin: 5px 20px 20px 0px;
     float:right;
 }
+
+/*podstrona o mnie*/
+
+.portfolio-about-photo {
+    float: left;
+    margin: 10px 0px 0px 100px;
+}
+
+.portfolio-about-short-description {
+    width: 400px;
+    float: right;
+    font-size: 17px;
+    color: #FFFFFF;
+    margin: 50px 150px 0px 0px;
+}
+
+.portfolio-about-long-description {
+    padding: 10px;
+    margin: 0px 60px 0px 60px;
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 25px;
+    //min-height: 600px;
+}
+
+.portfolio-about-rolls-icons {
+    margin: 5px 0px 5px 10px;
+}
+
+.portfolio-cv-roll {
+    background-image: url('http://files.hostgator.co.in/hostgator234554/image/icon_resume.gif');
+    background-size: 38px 38px;
+    height: 38px;
+    width: 38px;
+    margin: 5px 15px 0px 20px;
+    float:left;
+    position:relative;
+    border-radius: 50%;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+}
+
+.portfolio-cv-roll:hover {
+    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.8);
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    transform:rotate(360deg);
+}
+
+/*podstrona kontakt*/
+
+.portfolio-contact {
+    margin: 10px 40px 0px 40px;
+    color: #FFFFFF;
+    width: 100%;
+}
+
+.portfolio-contact-contacts {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.portfolio-contact-social {
+    text-align: center;
+    margin-top: 10px;
+    
+}
+
+//google maps
+.portfolio-googlemaps {
+    overflow: hidden;
+    height: 500px;
+    width: 600px;
+}
+
+#gmap_canvas {
+    height: 500px;
+    width: 600px;
+    color: #000000;
+    margin: 20px auto 0px auto;
+}
+#gmap_canvas img{
+    max-width: none!important;
+    background: none!important
+}
+//end of google maps
