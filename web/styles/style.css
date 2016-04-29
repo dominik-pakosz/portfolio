@@ -1,3 +1,9 @@
+header {
+    color: #FFFFFF;
+    margin: 10px 0px 10px 30px;
+    font-size: 24px;
+}
+
 a {
     color: #FFFFFF !important;
 }
@@ -216,7 +222,6 @@ footer {
 .portfolio-row-works {
     width: 100%;
     height: 350px;
-    /*background-color: red;*/
 }
 
 .portfolio-work {
@@ -224,7 +229,7 @@ footer {
     height: 300px;
     float: left;
     margin: 20px 50px 0px 50px;
-    background-color: #3D3D3D;
+    background-color: #2C2C2C;
 }
 
 .portfolio-work-title {
@@ -246,4 +251,37 @@ footer {
     font-size: 15px;
     float:right;
     margin: 10px 40px 0px 0px;
+}
+
+/*podstrona blog*/
+
+.portfolio-blog-post {
+    width: 90%;
+    margin: 20px auto 0px auto;
+}
+
+.portfolio-blog-post-title {
+    width: 60%;
+    height: 40px;
+    float: left;
+    background-color: #545454;
+    margin: 10px 0px 0px 0px;
+    padding: 5px 0px 5px 25px;
+    font-size: 20px;
+    color: #FFFFFF;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.portfolio-blog-post-text {
+    width: 100%;
+    padding: 10px 20px 10px 20px;
+    background-color: #2D2D2D;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+.portfolio-blog-post-chceckout {
+    margin: 5px 20px 20px 0px;
+    float:right;
 }

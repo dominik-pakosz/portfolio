@@ -15,6 +15,24 @@
         {% block javascripts %}
         <script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.js') }}"></script>
         <script src="{{ asset('bower_components/jquery/dist/jquery.js') }}"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(window).scroll(function() {
+                if ($(this).scrollTop() > 1){  
+                    $('.portfolio-sticky-animated-nav').addClass("sticky");
+                    $('.portfolio-sticky-animated-button').addClass("sticky");
+                    $('.portfolio-social-roll-facebook').animate({left: "140px", top: "40px"}, 1);
+                    $('.portfolio-social-roll-in').animate({left: "140px", top: "40px"}, 1);
+                  }
+                  else{
+                    $('.portfolio-sticky-animated-nav').removeClass("sticky");
+                    $('.portfolio-sticky-animated-button').removeClass("sticky");
+                    $('.portfolio-social-roll-facebook').animate({left: "0px", top: "0px"}, 1);
+                    $('.portfolio-social-roll-in').animate({left: "0px", top: "0px"}, 1);
+                  }
+                });
+            });
+        </script>
         {% endblock %}
     </body>
 </html>
