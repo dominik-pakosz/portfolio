@@ -20,7 +20,7 @@
     <div class="portfolio-recent-images">
         {% for work in works %}
         <div class="portfolio-homepage-work-image">
-            <a href="#"><img src="{{work.photo}}" alt="{{work.title}} zdjęcie" /></a>
+            <a href="/work/{{work.id}}"><img src="{{work.photo}}" alt="{{work.title}} zdjęcie" /></a>
         </div>
         {% endfor %}
         <div style="clear:both;"></div>
