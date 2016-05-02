@@ -1,75 +1,22 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    
-    <div class="portfolio-container">
-        <div class="portfolio-sticky-animated-nav">
-            <div class="portfolio-sticky-animated-inner">
-                <nav>
-                    <a href="{{path('homepage')}}"><div class="portfolio-sticky-animated-button">Home</div></a>
-                    <a href="{{path('about')}}"><div class="portfolio-sticky-animated-button">O mnie</div></a>
-                    <a href="{{path('portfolio')}}"><div class="portfolio-sticky-animated-button">Portfolio</div></a>
-                    <a href="{{path('blog')}}"><div class="portfolio-sticky-animated-button">Blog</div></a>
-                    <a href="{{path('contact')}}"><div class="portfolio-sticky-animated-button">Kontakt</div></a>
-                    <a href="{{path('homepage')}}"><div class="portfolio-sticky-animated-button">Usługi</div></a>
-                </nav>
-                <div class="portfolio-sticky-animated-socials">
-                    <a href="#"><div class="portfolio-social-roll-facebook"></div></a>
-                    <a href="#"><div class="portfolio-social-roll-in"></div></a>
-                </div>
+    <header>Moje dotychczasowe prace</header>
+    {% set i = 0 %}
+    <div class="portfolio-row-works">
+        {% for work in allWorks %}
+        <div class="portfolio-work">
+            <div class="portfolio-work-title">{{work.title}}</div>
+            <div class="portfolio-work-image">
+                 <img src="{{work.photo}}" class="img-responsive" alt="{{work.title}}-image" />
             </div>
+            <div class="portfolio-work-chceckout"><a href="/work/{{work.id}}">Zobacz pracę &raquo;</a></div>
         </div>
-        <div class="portfolio-main">
-            <header>Moje dotychczasowe prace</header>
-            <div class="portfolio-row-works">
-                <div class="portfolio-work">
-                    <div class="portfolio-work-title">Przykładowy tytuł</div>
-                    <div class="portfolio-work-image">
-                         <img src="/images/example-work.jpg" class="img-responsive" alt="example-work" />
-                    </div>
-                    <div class="portfolio-work-chceckout"><a href="#">Zobacz pracę &raquo;</a></div>
-                </div>
-                <div class="portfolio-work">
-                    <div class="portfolio-work-title">TYTUŁ</div>
-                    <div class="portfolio-work-image">
-                        <img src="/images/example-work.jpg" class="img-responsive" alt="example-work" />
-                    </div>
-                    <div class="portfolio-work-chceckout"><a href="#">Zobacz pracę &raquo;</a></div>
-                </div>
-            </div>
-            <div class="portfolio-row-works">
-                <div class="portfolio-work">
-                    <div class="portfolio-work-title">TYTUŁ</div>
-                    <div class="portfolio-work-image">
-                        <img src="/images/example-work.jpg" class="img-responsive" alt="example-work" />
-                    </div>
-                    <div class="portfolio-work-chceckout"><a href="#">Zobacz pracę &raquo;</a></div>
-                </div>
-                <div class="portfolio-work">
-                    <div class="portfolio-work-title">TYTUŁ</div>
-                    <div class="portfolio-work-image">
-                        <img src="/images/example-work.jpg" class="img-responsive" alt="example-work" />
-                    </div>
-                    <div class="portfolio-work-chceckout"><a href="#">Zobacz pracę &raquo;</a></div>
-                </div>
-            </div>
-            <div class="portfolio-row-works">
-                <div class="portfolio-work">
-                    <div class="portfolio-work-title">TYTUŁ</div>
-                    <div class="portfolio-work-image">
-                        <img src="/images/example-work.jpg" class="img-responsive" alt="example-work" />
-                    </div>
-                    <div class="portfolio-work-chceckout"><a href="#">Zobacz pracę &raquo;</a></div>
-                </div>
-                <div class="portfolio-work">
-                    <div class="portfolio-work-title">TYTUŁ</div>
-                    <div class="portfolio-work-image">
-                        <img src="/images/example-work.jpg" class="img-responsive" alt="example-work" />
-                    </div>
-                    <div class="portfolio-work-chceckout"><a href="#">Zobacz pracę &raquo;</a></div>
-                </div>
-            </div>
-        </div>
-        <footer>Dominik Pakosz &copy; 2016 | <a href="mailto:czlowiek@czlowiek.pl">Masz pytanie lub sugestię?</a></footer>
+            {% set i=i+1 %}
+            {% if i%2 == 0 and i<allWorks|length %}
+    </div>
+    <div class="portfolio-row-works">
+    {% endif %}
+        {% endfor %}
     </div>
 {% endblock %}

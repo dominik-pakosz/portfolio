@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="portfolio-bredcrumb">
+        <a href="/blog">Blog</a> > <a href="/post/{{post.id}}">{{post.title}}</a>
+    </div>
+    <div class="portfolio-blog-post">
+        <div class="portfolio-blog-post-title">{{post.title}}</div>
+        <div style="clear:both;"></div>
+        <div class="portfolio-blog-post-text">{{post.post|nl2br}}</div>
+        <div class="portfolio-work-back"><a href="/blog">&laquo; Wróć</a></div>
+        <div style="clear:both;"></div>
+    </div>
+{% endblock %}

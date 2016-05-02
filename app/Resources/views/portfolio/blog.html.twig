@@ -1,54 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    
-    <div class="portfolio-container">
-        <div class="portfolio-sticky-animated-nav">
-            <div class="portfolio-sticky-animated-inner">
-                <nav>
-                    <a href="{{path('homepage')}}"><div class="portfolio-sticky-animated-button">Home</div></a>
-                    <a href="{{path('about')}}"><div class="portfolio-sticky-animated-button">O mnie</div></a>
-                    <a href="{{path('portfolio')}}"><div class="portfolio-sticky-animated-button">Portfolio</div></a>
-                    <a href="{{path('blog')}}"><div class="portfolio-sticky-animated-button">Blog</div></a>
-                    <a href="{{path('contact')}}"><div class="portfolio-sticky-animated-button">Kontakt</div></a>
-                    <a href="{{path('homepage')}}"><div class="portfolio-sticky-animated-button">Usługi</div></a>
-                </nav>
-                <div class="portfolio-sticky-animated-socials">
-                    <a href="#"><div class="portfolio-social-roll-facebook"></div></a>
-                    <a href="#"><div class="portfolio-social-roll-in"></div></a>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-main">
-            <header>Blog</header>
-            <div class="portfolio-blog-post">
-                <div class="portfolio-blog-post-title">Przykładowy tytuł</div>
-                <div style="clear:both;"></div>
-                <div class="portfolio-blog-post-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nulla malesuada, laoreet ligula at, placerat orci. Sed sit amet sapien pulvinar, interdum libero in, mollis nisl. Donec sollicitudin eu est lacinia volutpat. Fusce facilisis leo blandit felis porttitor volutpat. Praesent sit amet nisl quis urna ultrices vehicula. Pellentesque arcu dui, tempus non magna non, aliquet porta eros. Phasellus suscipit rutrum dolor, vel faucibus ante mattis a. Integer blandit ipsum id dui feugiat aliquam. Nullam placerat, urna eget varius ultricies, quam nibh luctus ligula, id volutpat sapien tellus vitae nisl. Praesent non justo purus. Fusce sed vulputate diam. Donec ornare blandit neque, sed imperdiet ante convallis ut. Nam volutpat, quam sit amet tempor laoreet, dolor ligula blandit tortor, non tristique arcu tellus quis nisi. Vivamus dictum eu risus a varius. In hac habitasse platea dictumst. 
-                </div>
-                <div class="portfolio-blog-post-chceckout"><a href="#">Czytaj dalej &raquo;</a></div>
-                <div style="clear:both;"></div>
-            </div>
-            <div class="portfolio-blog-post">
-                <div class="portfolio-blog-post-title">Przykładowy tytuł</div>
-                <div style="clear:both;"></div>
-                <div class="portfolio-blog-post-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nulla malesuada, laoreet ligula at, placerat orci. Sed sit amet sapien pulvinar, interdum libero in, mollis nisl. Donec sollicitudin eu est lacinia volutpat. Fusce facilisis leo blandit felis porttitor volutpat. Praesent sit amet nisl quis urna ultrices vehicula. Pellentesque arcu dui, tempus non magna non, aliquet porta eros. Phasellus suscipit rutrum dolor, vel faucibus ante mattis a. Integer blandit ipsum id dui feugiat aliquam. Nullam placerat, urna eget varius ultricies, quam nibh luctus ligula, id volutpat sapien tellus vitae nisl. Praesent non justo purus. Fusce sed vulputate diam. Donec ornare blandit neque, sed imperdiet ante convallis ut. Nam volutpat, quam sit amet tempor laoreet, dolor ligula blandit tortor, non tristique arcu tellus quis nisi. Vivamus dictum eu risus a varius. In hac habitasse platea dictumst. 
-                </div>
-                <div class="portfolio-blog-post-chceckout"><a href="#">Czytaj dalej &raquo;</a></div>
-                <div style="clear:both;"></div>
-            </div>
-            <div class="portfolio-blog-post">
-                <div class="portfolio-blog-post-title">Przykładowy tytuł</div>
-                <div style="clear:both;"></div>
-                <div class="portfolio-blog-post-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nulla malesuada, laoreet ligula at, placerat orci. Sed sit amet sapien pulvinar, interdum libero in, mollis nisl. Donec sollicitudin eu est lacinia volutpat. Fusce facilisis leo blandit felis porttitor volutpat. Praesent sit amet nisl quis urna ultrices vehicula. Pellentesque arcu dui, tempus non magna non, aliquet porta eros. Phasellus suscipit rutrum dolor, vel faucibus ante mattis a. Integer blandit ipsum id dui feugiat aliquam. Nullam placerat, urna eget varius ultricies, quam nibh luctus ligula, id volutpat sapien tellus vitae nisl. Praesent non justo purus. Fusce sed vulputate diam. Donec ornare blandit neque, sed imperdiet ante convallis ut. Nam volutpat, quam sit amet tempor laoreet, dolor ligula blandit tortor, non tristique arcu tellus quis nisi. Vivamus dictum eu risus a varius. In hac habitasse platea dictumst. 
-                </div>
-                <div class="portfolio-blog-post-chceckout"><a href="#">Czytaj dalej &raquo;</a></div>
-                <div style="clear:both;"></div>
-            </div>
-        </div>
-        <footer>Dominik Pakosz &copy; 2016 | <a href="mailto:czlowiek@czlowiek.pl">Masz pytanie lub sugestię?</a></footer>
+    <header>Blog</header>
+    {% for post in posts %}
+    <div class="portfolio-blog-post">
+        <div class="portfolio-blog-post-title">{{post.title}}</div>
+        <div style="clear:both;"></div>
+        <div class="portfolio-blog-post-text">{{post.post|slice(0, 400)}}...</div>
+        <div class="portfolio-blog-post-chceckout"><a href="/post/{{post.id}}">Czytaj dalej &raquo;</a></div>
+        <div style="clear:both;"></div>
     </div>
+    {% endfor %}
+    {% if posts is empty %}
+    <div class="portfolio-blog-empty">Nie znaleziono postów w bazie!</div>
+    {% endif %}
 {% endblock %}

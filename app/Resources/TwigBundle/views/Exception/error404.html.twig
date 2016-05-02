@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="portfolio-error404">
+        <img src="/images/errors/error404.jpg" alt="error404-image" /><br/>
+        No i popsułeś stronę... Kod błędu: {{status_code}}<br/>
+        {{exception.message}}
+    </div>
+{% endblock %}

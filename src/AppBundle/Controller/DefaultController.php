@@ -12,7 +12,12 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('portfolio/home.html.twig');
+        $recentWorks = $this->getDoctrine()->getRepository('AppBundle:Portfolio')->findThreeNewest();
+        $recentPosts = $this->getDoctrine()->getRepository('AppBundle:Blog')->findThreeNewest();
+        return $this->render('portfolio/home.html.twig', array(
+            'works' => $recentWorks,
+            'posts' => $recentPosts
+        ));
     }
     
     /**
@@ -28,7 +33,11 @@ class DefaultController extends Controller
      */
     public function portfolioAction()
     {
-        return $this->render('portfolio/portfolio.html.twig');
+        $allWorks = $this->getDoctrine()->getRepository('AppBundle:Portfolio')->findAll();
+       
+        return $this->render('portfolio/portfolio.html.twig', array(
+            'allWorks' => $allWorks
+        ));
     }
     
     /**
@@ -36,11 +45,14 @@ class DefaultController extends Controller
      */
     public function workAction($id)
     {
-        if ($id) {
-            //logika pobrania i wyświetlenia konkretnej pracy z bazy
-        } else {
-            return $this->redirectToRoute('homepage');
+        $work = $this->getDoctrine()->getRepository('AppBundle:Portfolio')->findOneBy(array('id' => $id));
+        if (!$work) {
+            throw $this->createNotFoundException('Nie znaleziono takiej pracy!');
         }
+        
+        return $this->render('/portfolio/work.html.twig', array(
+            'work' => $work
+        ));
     }
     
     /**
@@ -48,20 +60,27 @@ class DefaultController extends Controller
      */
     public function blogAction()
     {
-        return $this->render('/portfolio/blog.html.twig');
+        $posts = $this->getDoctrine()->getRepository('AppBundle:Blog')->findAll();
+        
+        return $this->render('/portfolio/blog.html.twig', array(
+            'posts' => $posts
+        ));
     }
     
     /**
-     * @Route("/post/{title}", name="post", defaults={"title" = null})
+     * @Route("/post/{id}", name="post", defaults={"id" = null})
      */
-    public function postAction($title)
+    public function postAction($id)
     {
-        if ($title) {
-            //logika wyciągania posta z bazy 
-        } else {
-            return $this->redirectToRoute('homepage');
-            //lub wywal 404 -> jeszcze do przemyślenia
+        $post = $this->getDoctrine()->getRepository('AppBundle:Blog')->findOneBy(array('id' => $id));
+        
+        if (!$post) {
+            throw $this->createNotFoundException('Nie znaleziono takiego artykułu!');
         }
+        
+        return $this->render('/portfolio/post.html.twig', array(
+            'post' => $post
+        ));
     }
     
     /**

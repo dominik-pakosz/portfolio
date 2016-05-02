@@ -1,46 +1,27 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="portfolio-container">
-        <div class="portfolio-sticky-animated-nav">
-            <div class="portfolio-sticky-animated-inner">
-                <nav>
-                    <a href="{{path('homepage')}}"><div class="portfolio-sticky-animated-button">Home</div></a>
-                    <a href="{{path('about')}}"><div class="portfolio-sticky-animated-button">O mnie</div></a>
-                    <a href="{{path('portfolio')}}"><div class="portfolio-sticky-animated-button">Portfolio</div></a>
-                    <a href="{{path('blog')}}"><div class="portfolio-sticky-animated-button">Blog</div></a>
-                    <a href="{{path('contact')}}"><div class="portfolio-sticky-animated-button">Kontakt</div></a>
-                    <a href="{{path('homepage')}}"><div class="portfolio-sticky-animated-button">Usługi</div></a>
-                </nav>
-                <div class="portfolio-sticky-animated-socials">
-                    <a href="#"><div class="portfolio-social-roll-facebook"></div></a>
-                    <a href="#"><div class="portfolio-social-roll-in"></div></a>
-                </div>
+    <header>Kontakt</header>
+    <div class="portfolio-contact">
+        <h1>Jesteś chętny do współpracy?</h1>
+        <h2>Chcesz zapytać o kilka ważnych rzeczy zanim zaczniemy?</h2>
+        <p>Możesz to zrobić na kilka sposobów! Wybierz jeden lub kilka z poniższych:</p>
+        <center>
+        <div class="portfolio-googlemaps">
+            <div id="gmap_canvas">
+                <a class="google-map-code" href="http://www.themecircle.net" id="get-map-data">themecircle</a>
             </div>
         </div>
-        <div class="portfolio-main">
-            <header>Kontakt</header>
-            <div class="portfolio-contact">
-                <h1>Jesteś chętny do współpracy?</h1>
-                <h2>Chcesz zapytać o kilka ważnych rzeczy zanim zaczniemy?</h2>
-                <p>Możesz to zrobić na kilka sposobów! Wybierz jeden lub kilka z poniższych:</p>
-                <div class="portfolio-googlemaps">
-                    <div id="gmap_canvas">
-                        <a class="google-map-code" href="http://www.themecircle.net" id="get-map-data">themecircle</a>
-                    </div>
-                </div>
-                <div class="portfolio-contact-contacts">
-                    <div><span style="font-size: 30px;" class="glyphicon glyphicon-phone" aria-hidden="true"></span> XXX-XXX-XXX</div>
-                    <div><span style="font-size: 30px;" class="glyphicon glyphicon-envelope" aria-hidden="true"></span> email@email.com</div>
-                    <div class="portfolio-contact-social">
-                        <a href="#"><img src="/images/facebook.png" /></a>
-                        <a href="#"><img src="/images/linkedin.png" /></a>
-                    </div>
-                </div>
-                
+        </center>
+        <div class="portfolio-contact-contacts">
+            <div><span style="font-size: 30px;" class="glyphicon glyphicon-phone" aria-hidden="true"></span> XXX-XXX-XXX</div>
+            <div><span style="font-size: 30px;" class="glyphicon glyphicon-envelope" aria-hidden="true"></span> email@email.com</div>
+            <div class="portfolio-contact-social">
+                <a href="#"><img src="/images/facebook.png" /></a>
+                <a href="#"><img src="/images/linkedin.png" /></a>
             </div>
         </div>
-        <footer>Dominik Pakosz &copy; 2016 | <a href="mailto:czlowiek@czlowiek.pl">Masz pytanie lub sugestię?</a></footer>
+
     </div>
 {% endblock %}
 {% block javascripts %}

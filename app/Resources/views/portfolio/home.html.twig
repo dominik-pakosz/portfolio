@@ -1,88 +1,45 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    
-    <div class="portfolio-container">
-        <div class="portfolio-sticky-animated-nav">
-            <div class="portfolio-sticky-animated-inner">
-                <nav>
-                    <a href="{{path('homepage')}}"><div class="portfolio-sticky-animated-button">Home</div></a>
-                    <a href="{{path('about')}}"><div class="portfolio-sticky-animated-button">O mnie</div></a>
-                    <a href="{{path('portfolio')}}"><div class="portfolio-sticky-animated-button">Portfolio</div></a>
-                    <a href="{{path('blog')}}"><div class="portfolio-sticky-animated-button">Blog</div></a>
-                    <a href="{{path('contact')}}"><div class="portfolio-sticky-animated-button">Kontakt</div></a>
-                    <a href="{{path('homepage')}}"><div class="portfolio-sticky-animated-button">Usługi</div></a>
-                </nav>
-                <div class="portfolio-sticky-animated-socials">
-                    <a href="#"><div class="portfolio-social-roll-facebook"></div></a>
-                    <a href="#"><div class="portfolio-social-roll-in"></div></a>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-top">
-        </div>
-        <div class="portfolio-main">
-            <div class="portfolio-main-logotype">
-                <div class="portfolio-big-circle">
-                    Dominik<br/>Pakosz<br/><h1>.portfolio</h1>
-                </div>
-                <div class="portfolio-short-about">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus dictum est, eu feugiat ex vestibulum eu. Nunc libero felis, sagittis ac placerat et, sagittis eu eros. Vestibulum lobortis nisl sit amet lorem condimentum tincidunt. Nulla non vehicula nunc, nec vehicula nisl. Nullam rhoncus porta neque sit amet laoreet. Cras dui nulla, suscipit eu congue et, efficitur sed ante. Suspendisse ut velit vitae magna vulputate auctor sed eget quam.
-                </div>
-            </div>
-                <div class="portfolio-hr" id="hr"><hr></div>
-                <div class="portfolio-main-recents" id="main-recent-projects">
-                    <div class="portfolio-recent-short-text">
-                        <h3>Ostatnie projekty</h3>
-                        Najświeższe projekty nad którymi pracowałem. Zerknij.
-                        <div class="portfolio-recent-links"><a href="#">Zobacz wszystkie prace &raquo;</a></div>
-                    </div>
-                    <div class="portfolio-recent-images">
-                        <div class="portfolio-pseudo-image"></div>
-                        <div class="portfolio-pseudo-image"></div>
-                        <div class="portfolio-pseudo-image"></div>
-                    </div>
-                </div>
-                <div class="portfolio-hr" id="hr"><hr></div>
-                <div class="portfolio-main-recents" id="main-recent-posts">
-                    <div class="portfolio-recent-short-text">
-                        <h3>Ostatnie posty</h3>
-                        Najświeższe posty na moim blogu. Sprawdź.
-                        <div class="portfolio-recent-links"><a href="#">Zobacz wszystkie posty &raquo;</a></div>
-                    </div>
-                    <div class="portfolio-recent-images">
-                        <div class="portfolio-pseudo-image"></div>
-                        <div class="portfolio-pseudo-image"></div>
-                        <div class="portfolio-pseudo-image"></div>
-                    </div>
-                </div>
-                <div class="portfolio-hr" id="hr"><hr></div>
-                <div class="portfolio-main-recents" id="main-recent-posts">
-                    <div class="portfolio-recent-short-text">
-                        <h3>Ostatnie posty</h3>
-                        Najświeższe posty na moim blogu. Sprawdź.
-                        <div class="portfolio-recent-links"><a href="#">Zobacz wszystkie posty &raquo;</a></div>
-                    </div>
-                    <div class="portfolio-recent-images">
-                        <div class="portfolio-pseudo-image"></div>
-                        <div class="portfolio-pseudo-image"></div>
-                        <div class="portfolio-pseudo-image"></div>
-                    </div>
-                </div>
-                <div class="portfolio-hr" id="hr"><hr></div>
-                <div class="portfolio-main-recents" id="main-recent-posts">
-                    <div class="portfolio-recent-short-text">
-                        <h3>Ostatnie posty</h3>
-                        Najświeższe posty na moim blogu. Sprawdź.
-                        <div class="portfolio-recent-links"><a href="#">Zobacz wszystkie posty &raquo;</a></div>
-                    </div>
-                    <div class="portfolio-recent-images">
-                        <div class="portfolio-pseudo-image"></div>
-                        <div class="portfolio-pseudo-image"></div>
-                        <div class="portfolio-pseudo-image"></div>
-                    </div>
-                </div>
-        </div>
-        <footer>Dominik Pakosz &copy; 2016 | <a href="mailto:czlowiek@czlowiek.pl">Masz pytanie lub sugestię?</a></footer>
+<div class="portfolio-main-logotype">
+    <div class="portfolio-big-circle">
+        Dominik<br/>Pakosz<br/><h1>.portfolio</h1>
     </div>
+    <div class="portfolio-short-about">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus dictum est, eu feugiat ex vestibulum eu. Nunc libero felis, sagittis ac placerat et, sagittis eu eros. Vestibulum lobortis nisl sit amet lorem condimentum tincidunt. Nulla non vehicula nunc, nec vehicula nisl. Nullam rhoncus porta neque sit amet laoreet. Cras dui nulla, suscipit eu congue et, efficitur sed ante. Suspendisse ut velit vitae magna vulputate auctor sed eget quam.
+    </div>
+    <div style="clear:both;"></div>
+</div>
+<div class="portfolio-hr" id="hr"><hr></div>
+<div class="portfolio-main-recents" id="main-recent-projects">
+    <div class="portfolio-recent-short-text">
+        <h3>Ostatnie projekty</h3>
+        Najświeższe projekty nad którymi pracowałem. Zerknij.
+        <div class="portfolio-recent-links"><a href="/portfolio">Zobacz wszystkie prace &raquo;</a></div>
+    </div>
+    <div class="portfolio-recent-images">
+        {% for work in works %}
+        <div class="portfolio-homepage-work-image">
+            <a href="#"><img src="{{work.photo}}" alt="{{work.title}} zdjęcie" /></a>
+        </div>
+        {% endfor %}
+        <div style="clear:both;"></div>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+<div class="portfolio-hr" id="hr"><hr></div>
+<div class="portfolio-main-recents" id="main-recent-posts">
+    <div class="portfolio-recent-short-text">
+        <h3>Ostatnie posty</h3>
+        Najświeższe posty na moim blogu. Sprawdź.
+        <div class="portfolio-recent-links"><a href="/blog">Zobacz wszystkie posty &raquo;</a></div>
+    </div>
+    <div class="portfolio-recent-images">
+        {% for post in posts %}
+            <div class="portfolio-homepage-short-post">{{post.post|slice(0, 120)}}...<br/><a href="/post/{{post.id}}">Zobacz post &raquo;</a></div>
+        {% endfor %}
+        <div style="clear:both;"></div>
+    </div>
+    <div style="clear:both;"></div>
+</div>
 {% endblock %}
